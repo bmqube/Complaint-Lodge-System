@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!-- Custom CSS -->
+    <style>
+      td,
+      th {
+        border-right: 1px solid #dee2e6 !important;
+      }
+
+      th {
+        text-align: center !important;
+      }
+
+      .item {
+        padding: 0.5rem 0rem;
+        page-break-inside: avoid;
+      }
+
+      /* .toc-page {
+      line-height: 0.6rem;
+    } */
+
+      .toc {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+
+      .toc::after {
+        content: "............................................................................................................................................................................................................................................";
+      }
+
+      .toc-page-no {
+        flex-shrink: 0;
+      }
+
+      .page {
+        padding: 1rem 3.5rem !important;
+        margin-top: 5rem;
+        border: 2px solid rgb(202, 202, 202);
+      }
+
+      .page-break {
+        page-break-after: always;
+      }
+
+      @media print {
+        .page {
+          margin-top: 0;
+          border: none;
+        }
+      }
+    </style>
+
+    <title>SDS For NSU CLS</title>
+  </head>
+
+  <body>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-6">
+        <!-- Cover Page -->
+        <div class="page p-3 page-break">
+          <div class="mx-4 my-5 text-end fw-bold">
+            <div class="border border-2 border-dark"></div>
+            <div class="row justify-content-end">
+              <div class="col-8">
+                <h1 class="mt-5">Software Design Specification</h1>
+              </div>
+            </div>
+            <p class="mt-5">for</p>
+            <h1 class="mt-5">NSU-CLS</h1>
+            <p class="mt-5">Version 1.0</p>
+            <p class="mt-5">Prepared by</p>
+            <br />
+            <p>BM Monjur Morshed - 2011530642</p>
+            <p>Shamrana Mahmud - 2012216642</p>
+            <p class="mt-5">North South University</p>
+            <p class="mt-5">24th April, 2022</p>
+          </div>
+        </div>
+        <!-- ToC Page -->
+
+        <div class="page page-break toc-page p-3">
+          <h3 class="my-5">Table of Contents</h3>
+          <div class="d-flex justify-content-between fw-bold">
+            <h6 class="toc">Table of Contents</h6>
+            <p>2</p>
+          </div>
+
+          <div class="d-flex justify-content-between fw-bold">
+            <h6 class="toc">Introduction</h6>
+            <p>3</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h6 class="toc">Document Conventions</h6>
+            <p>3</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h6 class="toc">Description of Design Components</h6>
+            <p>3</p>
+          </div>
+          <!-- <div class="d-flex justify-content-between">
+            <h6 class="toc">High Level Component Design</h6>
+            <p>3</p>
+          </div> -->
+          <div class="d-flex justify-content-between">
+            <h6 class="toc">Class Diagrams</h6>
+            <p>4</p>
+          </div>
+          <div class="ms-4 d-flex justify-content-between">
+            <div class="toc">Detailed Class Diagram(s)</div>
+            <p>4</p>
+          </div>
+          <div class="ms-4 d-flex justify-content-between">
+            <div class="toc">Detailed Class Description(s)</div>
+            <p>5</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h6 class="toc">Database Design</h6>
+            <p>10</p>
+          </div>
+          <div class="ms-4 d-flex justify-content-between">
+            <div class="toc">ER Diagram</div>
+            <p>10</p>
+          </div>
+          <div class="ms-4 d-flex justify-content-between">
+            <div class="toc">ER Description</div>
+            <p>11</p>
+          </div>
+          <div class="d-flex justify-content-between">
+            <h6 class="toc">Implementation Plan</h6>
+            <p>13</p>
+          </div>
+        </div>
+
+        <div class="page page-break p-3">
+          <h2>Introduction</h2>
+          <p>
+            The purpose is to detail the implementation of the requirement as
+            defined in the Software Requirements Specification. Design
+            components are described in detail. High level component design is
+            also added which shows which component mainly depends on what other
+            components.Moreover,in this software design specification class
+            diagram is added with class description which are described in
+            detail such as name,type ,purpose of every attribute of each
+            class.Furthermore, database design are also added.
+          </p>
+
+          <h2>Document Conventions</h2>
+          <ul>
+            <li>
+              In this software design specification, the primary key is written
+              in bold font.
+            </li>
+          </ul>
+
+          <h2>Description of Design Components</h2>
+          <img src="./design_comp.png" alt="" width="100%" />
+        </div>
+
+        <div class="page page-break p-3">
+          <h2 class="my-3">Class Diagrams</h2>
+          <div class="item">
+            <h4>Detailed Class Diagram(s)</h4>
+            <img src="./uml.jpeg" alt="" width="100%" />
+          </div>
+        </div>
+
+        <div class="page page-break p-3">
+          <h2 class="my-3">Detailed Class Description(s)</h2>
+          <div class="item my-3">
+            <h4>Name of Class: User</h4>
+            <p>
+              <span class="fw-bold">Purpose: </span>For storing data of every
+              individual maintaining uniqueness for each of them. This
+              information is stored after a user is registered into the system.
+              And further these data are used for login purpose
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>token</td>
+                  <td>
+                    The token is stored for every user for maintaining
+                    uniqueness for every individual .
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>nsuId</td>
+                  <td>
+                    For storing the NSU ID of every user as the user must be
+                    from North South University.
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>fullname</td>
+                  <td>
+                    For storing the full name of a user for registration
+                    purposes.
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>email</td>
+                  <td>
+                    Email of a user is stored for registration and login
+                    purposes and also for sending necessary emails to the user
+                    from the system.
+                  </td>
+                  <td>String</td>
+                </tr>
+                <tr>
+                  <td>authType</td>
+                  <td>
+                    For identifying whether a user Is registered through google
+                    sign up or by providing a password manually.
+                  </td>
+                  <td>AuthType</td>
+                </tr>
+
+                <tr>
+                  <td>password</td>
+                  <td>
+                    For storing the password of the user which he/she will use
+                    to login to the system.
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>userType</td>
+                  <td>
+                    To identify whether the registered user is a
+                    student,teaching assistant,faculty ,helper or an admin.
+                  </td>
+                  <td>UserType</td>
+                </tr>
+
+                <tr>
+                  <td>ActorType</td>
+                  <td>A user can be a reviewer,non-reviewer or a sys-admin.</td>
+                  <td>ActorType</td>
+                </tr>
+                <tr>
+                  <td>scannedNsuId</td>
+                  <td>
+                    Nsu Id of the user should be scanned and submitted at the
+                    time of registration for proper identification of the user.
+                  </td>
+                  <td>ActorType</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>
+                    Status can be verified ,not verified or diabled. The default
+                    value is not verified.
+                  </td>
+                  <td>String</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="item my-3">
+            <h4>Name of Class: UserResetPassword</h4>
+            <p>
+              <span class="fw-bold">Purpose: </span> If a user forgets his/her
+              password which was provided at the time of registration,he/she
+              needs to reset the password to login into the system. For
+              resetting passwords, users will be provided with a link through
+              email which will expire after 24 hours.
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>token</td>
+                  <td>
+                    For maintaining uniqueness of every individual ,a token is
+                    stored
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>used</td>
+                  <td>
+                    To identify whether the password is reset or not through the
+                    link which was provided to the user via email.
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>expiresAt</td>
+                  <td>
+                    The link which will be provided to the user through email
+                    will expire after 24 hours.The user needs to reset the
+                    password before that time.
+                  </td>
+                  <td>Date</td>
+                </tr>
+
+                <tr>
+                  <td>status</td>
+                  <td>The default value of status is Active.</td>
+                  <td>String</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="item my-3">
+            <h4>Name of Class: UserVerification</h4>
+            <p>
+              <span class="fw-bold">Purpose: </span> At the time of
+              registration, after providing all the necessary information,user
+              will be provided with a link via email for verification whether
+              all the information of the user is valid or not.Verification is
+              needed to complete the registration.
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>token</td>
+                  <td>
+                    For maintaining uniqueness of every individual, a token is
+                    stored
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>isVerified</td>
+                  <td>
+                    To identify whether the user is verified or not.User must be
+                    verified for complete the registration process.
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>expiresAt</td>
+                  <td>
+                    The link for user verification which will be provided to the
+                    user through email will expire after 24 hours.The user needs
+                    to be verified before that time.
+                  </td>
+                  <td>Date</td>
+                </tr>
+
+                <tr>
+                  <td>status</td>
+                  <td>The default value of status is Active.</td>
+                  <td>String</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="item my-3">
+            <h4>Name of Class: UserSession</h4>
+            <p>
+              <span class="fw-bold">Purpose: </span> The Purpose is to keep a
+              user logged in to the system for 7 days if she/he does not log out
+              to the system. After 7 days, the user will be logged out of the
+              system.
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>token</td>
+                  <td>
+                    For maintaining uniqueness of every individual, a token is
+                    stored
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>expiresAt</td>
+                  <td>
+                    A user will be logged out after 7 days. He/she will be
+                    logged in for 7 days into the system.
+                  </td>
+                  <td>Date</td>
+                </tr>
+
+                <tr>
+                  <td>status</td>
+                  <td>The default value of status is Active.</td>
+                  <td>String</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="item my-3">
+            <h4>Name of Class: Complaint</h4>
+            <p>
+              <span class="fw-bold">Purpose: </span> The purpose of the class is
+              to store the complaint lodged by the user.The complaint can be
+              edited by the user anytime .Also the edit history will be
+              stored.The complaint can also be reviewed by the assigned reviewer
+              only.
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>token</td>
+                  <td>
+                    For maintaining the uniqueness of every complaint, a token
+                    is stored.
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>description</td>
+                  <td>
+                    The description of the complaint lodged user will be
+                    stored.The description of the complaint must be less than or
+                    equal to 1024 characters.
+                  </td>
+                  <td>Date</td>
+                </tr>
+
+                <tr>
+                  <td>status</td>
+                  <td>The default value of status is Active.</td>
+                  <td>String</td>
+                </tr>
+                <tr>
+                  <td>version</td>
+                  <td>
+                    The complaint can be edited by the user and the edit history
+                    can be shown with date and time of editing.
+                  </td>
+                  <td>String</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="item my-3">
+            <h4>Name of Class: CompaintAgainst</h4>
+            <p>
+              <span class="fw-bold">Purpose: </span> It's a relational table
+              that stores the information of a user as a complainee.
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>token</td>
+                  <td>
+                    For maintaining the uniqueness of every relation, a token is
+                    stored.
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>description</td>
+                  <td>
+                    The complainet lodger can be edited by the user.User can add
+                    more person against whom complaint has been lodged.Again
+                    lodger can also remove a complaineeThe edit history can be
+                    shown with date and time of editing.
+                  </td>
+                  <td>Integer</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>
+                    To store the status of the class.The default value of status
+                    is Active.
+                  </td>
+                  <td>String</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="item my-3">
+            <h4>Name of Class: CompaintComment</h4>
+            <p>
+              <span class="fw-bold">Purpose: </span> The comment which is made
+              by the reviewer is stored.A reviewer can comment multiple
+              times.Again if a reviewer changes the reviewer ,the update will
+              also be stored as a comment.
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>token</td>
+                  <td>
+                    For maintaining the uniqueness of every user, a token is
+                    stored.
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>comment</td>
+                  <td>
+                    A reviewer can add comments in a complaint multiple
+                    times.Again if a reviewer reassigns the reviewer ,the update
+                    will also be shown as a comment.All these comments are shown
+                    accordingly.
+                  </td>
+                  <td>String</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>
+                    To store the status of the class.The default value of status
+                    is Active.
+                  </td>
+                  <td>String</td>
+                </tr>
+                <tr>
+                  <td>commentType</td>
+                  <td>
+                    To store the information whether the comment is an actual
+                    comment made by the reviewer or it is an update that the
+                    reviewer of the complaint has been changed.
+                  </td>
+                  <td>String</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="item my-3">
+            <h4>Name of Class: CompaintEvidence</h4>
+            <p>
+              <span class="fw-bold">Purpose: </span> The purpose is to store the
+              evidence of the complaint which was made.Without proper
+              documentation, a lodger cannot lodge a complaint against another
+              user.
+            </p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>token</td>
+                  <td>
+                    For maintaining the uniqueness of every user, a token is
+                    stored.
+                  </td>
+                  <td>String</td>
+                </tr>
+
+                <tr>
+                  <td>fileName</td>
+                  <td>It stores evidence by giving it a unique file name.</td>
+                  <td>String</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                  <td>originalFileName</td>
+                  <td>
+                    It is the original file name which the lodger has uploaded.
+                  </td>
+                  <td>String</td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>
+                    To store the status of the class.The default value of status
+                    is Active.
+                  </td>
+                  <td>String</td>
+                </tr>
+                <tr>
+                  <td>version</td>
+                  <td>
+                    The evidence can be edited by the lodger any time. He/she
+                    can add or remove any evidence again & edit history will be
+                    shown with versioning.
+                  </td>
+                  <td>Integer</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="page page-break p-3">
+          <h2 class="my-3">Database Design</h2>
+          <div class="item">
+            <h4>ER Diagram</h4>
+            <img src="./erd.png" alt="" width="100%" />
+          </div>
+        </div>
+
+        <div class="page page-break p-3">
+          <h2 class="my-3">
+            ER Description (Name, Type, Purpose of Foreign Key)
+          </h2>
+          <div class="item">
+            <h4>Name of Class: UserResetPassword</h4>
+            <ul>
+              <li>
+                <p>Attribute name: userToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: It associates with the user i.e only a user can reset
+                  the password.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h4>Name of Class: UserSession</h4>
+            <ul>
+              <li>
+                <p>Attribute name: userToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: It handles whether the user is logged in to the
+                  system or not and this user is associated with the userToken.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h4>Name of Class: UserVerification</h4>
+            <ul>
+              <li>
+                <p>Attribute name: userToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: It handles whether the user is verified via email and
+                  the user is associated with the userToken.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h4>Name of Class: Complaint</h4>
+            <ul>
+              <li>
+                <p>Attribute name: userToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: The user who will lodge the complaint is associated
+                  with the userToken.
+                </p>
+              </li>
+              <li>
+                <p>Attribute name: reviewerToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: A reviewer is assigned for each complaint.The user
+                  who will review the complaint is associated with the
+                  reviewerToken.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h4>Name of Class: ComplaintAgainst</h4>
+            <ul>
+              <li>
+                <p>Attribute name: complaintToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: It belongs to the complaint part.Mainly,it associates
+                  the user with the complaint.
+                </p>
+              </li>
+              <li>
+                <p>Attribute name: complaintAgainstToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: It associates with the user against whom a complaint
+                  is being lodged.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h4>Name of Class: ComplaintComment</h4>
+            <ul>
+              <li>
+                <p>Attribute name: userToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: It associates the user i.e the reviewer of the
+                  complaint who makes the comment.
+                </p>
+              </li>
+              <li>
+                <p>Attribute name: complaintToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: It identifies which comment belongs to what
+                  complaint.
+                </p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <h4>Name of Class: ComplaintEvidence</h4>
+            <ul>
+              <li>
+                <p>Attribute name: complaintToken</p>
+                <p>Type: String</p>
+                <p>
+                  Purpose: It recognizes which evidence belongs to what
+                  complaint.
+                </p>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="page page-break p-3">
+          <h2>Implementation Plan</h2>
+          <ul>
+            <li>Define goals</li>
+            <li>Conduct research</li>
+            <li>Map out risks</li>
+            <li>Schedule milestones</li>
+            <li>Assign tasks between group members</li>
+            <li>Unit testing</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+{
+    "db": {
+        "host": "localhost",
+        "user": "root",
+        "pass": "",
+        "name": "nsucls"
+    },
+    "mailer": {
+        "email": "nsuclsbd@gmail.com",
+        "password": "Nsu@@121"
+    },
+    "links": {
+        "frontendUrl": "http://localhost:3000"
+    },
+    "googleAuth": {
+        "clientId": "920545029466-83ludcj54g1m718gt172fc9hqpo8ofok.apps.googleusercontent.com"
+    },
+    "sysAdmin": {
+        "nsuId": 111111,
+        "fullname": "System Admin",
+        "email": "nsuclsbd@gmail.com",
+        "authType": "Password",
+        "password": "Nsu@@121",
+        "userType": "SysAdmin",
+        "actorType": "SysAdmin",
+        "scannedNsuId": "",
+        "status": "Verified"
+    }
+}

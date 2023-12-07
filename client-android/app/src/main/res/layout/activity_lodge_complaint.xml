@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".LodgeComplaint">
+
+    <MultiAutoCompleteTextView
+        android:padding="15dp"
+        android:id="@+id/complaint_against_field"
+        android:hint="Complaint Against"
+        android:layout_width="match_parent"
+        android:maxLength="300"
+        android:layout_height="wrap_content"/>
+
+    <AutoCompleteTextView
+        android:padding="15dp"
+        android:id="@+id/complaint_reviewer_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="300"
+        android:hint="Choose Reviewer"/>
+
+    <EditText
+        android:padding="15dp"
+        android:id="@+id/complaint_body"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLength="700"
+        android:hint="Message"
+        android:inputType="text" />
+    <ImageView
+        android:id="@+id/mic"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/mic" />
+
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_New" >
+    </ListView>
+
+    <Button
+        android:layout_margin="5dp"
+        android:id="@+id/upload_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Evidence"/>
+
+    <Button
+        android:layout_margin="5dp"
+        android:id="@+id/lodge_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Lodge Complaint"/>
+</LinearLayout>

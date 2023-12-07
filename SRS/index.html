@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+  <!-- Custom CSS -->
+  <style>
+    td,
+    th {
+      border-right: 1px solid #dee2e6 !important;
+    }
+
+    th {
+      text-align: center !important;
+    }
+
+    .item {
+      padding: 0.5rem 0rem;
+      page-break-inside: avoid;
+    }
+
+    .toc-page {
+      line-height: 0.6rem;
+    }
+
+    .toc {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .toc::after {
+      content: "............................................................................................................................................................................................................................................";
+    }
+
+    .toc-page-no {
+      flex-shrink: 0;
+    }
+
+    .page {
+      padding: 1rem 3.5rem !important;
+      margin-top: 5rem;
+      border: 2px solid rgb(202, 202, 202);
+    }
+
+    .page-break {
+      page-break-after: always;
+    }
+
+    @media print {
+      .page {
+        margin-top: 0;
+        border: none;
+      }
+    }
+  </style>
+
+  <title>SRS For NSU CLS</title>
+</head>
+
+<body>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10 col-lg-6">
+      <!-- Cover Page -->
+      <div class="page p-3 page-break">
+        <div class="mx-4 my-5 text-end fw-bold">
+          <div class="border border-2 border-dark"></div>
+          <div class="row justify-content-end">
+            <div class="col-8">
+              <h1 class="mt-5">Software Requirements Specification</h1>
+            </div>
+          </div>
+          <p class="mt-5">for</p>
+          <h1 class="mt-5">NSU-CLS</h1>
+          <p class="mt-5">Version 1.0</p>
+          <p class="mt-5">Prepared by</p>
+          <br />
+          <p>BM Monjur Morshed - 2011530642</p>
+          <p>Shamrana Mahmud - 2012216642</p>
+          <p class="mt-5">North South University</p>
+          <p class="mt-5">22nd March, 2022</p>
+        </div>
+      </div>
+      <!-- ToC Page -->
+      <div class="page toc-page p-3">
+        <h3 class="my-2">Table of Contents</h3>
+        <div class="d-flex justify-content-between fw-bold">
+          <h6 class="toc">Table of Contents</h6>
+          <p>2</p>
+        </div>
+
+        <!-- Introduction -->
+        <div class="d-flex justify-content-between fw-bold">
+          <h6 class="toc">1. Introduction</h6>
+          <p>3</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">1.1 Purpose</div>
+          <p>3</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">1.2 Document Conventions</div>
+          <p>3</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">1.3 Intended Audience and Reading Suggestions</div>
+          <p>3</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">1.4 Product Scope</div>
+          <p>3</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">1.5 References</div>
+          <p>4</p>
+        </div>
+
+        <!-- Overall Description -->
+        <div class="d-flex justify-content-between fw-bold">
+          <h6 class="toc">2. Overall Description</h6>
+          <p>4</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">2.1 Product Perspective</div>
+          <p>4</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">2.2 Product Functions</div>
+          <p>4</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">2.3 User Classes and Characteristics</div>
+          <p>4</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">2.4 Operating Environment</div>
+          <p>5</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">2.5 Design and Implementation Constraints</div>
+          <p>5</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">2.6 User Documentation</div>
+          <p>5</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">2.7 Assumptions and Dependencies</div>
+          <p>5</p>
+        </div>
+
+        <!-- External Interface Requirements -->
+        <div class="d-flex justify-content-between fw-bold">
+          <h6 class="toc">3. External Interface Requirements</h6>
+          <p>5</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">3.1 User Interfaces</div>
+          <p>5</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">3.2 Hardware Interfaces</div>
+          <p>6</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">3.3 Software Interfaces</div>
+          <p>6</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">3.4 Communications Interfaces</div>
+          <p>6</p>
+        </div>
+
+        <!-- System Features -->
+        <div class="d-flex justify-content-between fw-bold">
+          <h6 class="toc">4. System Features</h6>
+          <p>7</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">4.1.1 Sign up</div>
+          <p>7</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">4.1.2 Sign up (Using Google sign-in)</div>
+          <p>8</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">4.2.1 Login</div>
+          <p>9</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">4.2.2 Login (Using Google sign-in)</div>
+          <p>10</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">4.3 Lodge Complaint</div>
+          <p>11</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">4.4 Edit Complaint</div>
+          <p>12</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">4.5 Review Complaint</div>
+          <p>13</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">4.6 Logout</div>
+          <p>14</p>
+        </div>
+
+        <!-- Other Nonfunctional Requirements -->
+        <div class="d-flex justify-content-between fw-bold">
+          <h6 class="toc">5. Other Nonfunctional Requirements</h6>
+          <p>14</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">5.1 Performance Requirements</div>
+          <p>14</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">5.2 Safety Requirements</div>
+          <p>14</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">5.3 Security Requirements</div>
+          <p>15</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">5.4 Software Quality Attributes</div>
+          <p>15</p>
+        </div>
+        <div class="ms-4 d-flex justify-content-between">
+          <div class="toc">5.5 Business Rules</div>
+          <p>15</p>
+        </div>
+        <div class="d-flex justify-content-between fw-bold">
+          <h6 class="toc">Appendix A: Glossary</h6>
+          <p>15</p>
+        </div>
+      </div>
+      <!-- Introduction Page -->
+      <div class="page p-3">
+        <h2 class="my-3">1. Introduction</h2>
+        <div class="item">
+          <h4>1.1 Purpose</h4>
+          <p>
+            The purpose of this document is to present a detailed description of our software product ‘NSU-CLS’.It will
+            explain the
+            purpose and features of the software, what the software will do and the constraints under which it must
+            operate. This
+            document describes the project's target audience and its user interface, hardware and software
+            requirements.This
+            document is intended for users of the software.
+          </p>
+        </div>
+        <div class="item">
+          <h4>1.2 Document Conventions</h4>
+          <p>
+            This Document was created based on the IEEE template for System
+            Requirement Specification Documents.
+          </p>
+        </div>
+        <div class="item">
+          <h4>1.3 Intended Audience and Reading Suggestions</h4>
+          <p>
+            The project is about a complaint lodging system, and it is
+            restricted within the university premises. This document is
+            intended for the course instructor, and the project is implemented
+            under his guidance. This SRS contains the overall description of
+            the project, such as product scope, product functions, design and
+            implementation. The project can be helpful for the faculty
+            members, students, teaching assistants, admin members, and other
+            North South University staff members.
+          </p>
+        </div>
+        <div class="item">
+          <h4>1.4 Product Scope</h4>
+          <p>
+            The project is about a complaint lodging system, and it is
+            restricted within the university premises. This document is
+            intended for the course instructor, and the project is implemented
+            under his guidance. This SRS contains the overall description of
+            the project, such as product scope, product functions, design and
+            implementation. The project can be helpful for the faculty
+            members, students, teaching assistants, admin members, and other
+            North South University staff members. The purpose of the complaint
+            lodging system is to manage all the complaints of faculty members,
+            students, teaching assistants, admin, and other staff members of
+            North South University to create a user-friendly and convenient
+            application. We will have a database server managing many users
+            and thousands of complaints by students, faculty members and
+            others. We hope to provide an easy-to-use application so that
+            users can lodge their complaints without any hassle.
+          </p>
+        </div>
+        <div class="item">
+          <h4>1.5 References</h4>
+          <p><a href="https://expressjs.com/">ExpressJS</a></p>
+          <p>
+            <a href="https://goo.gl/nsUFwy">IEEE Template for System Requirement Specification Documents</a>
+          </p>
+          <p><a href="https://developer.android.com/docs">Android</a></p>
+          <p><a href="https://dev.mysql.com/doc/">MySQL</a></p>
+        </div>
+      </div>
+      <!-- Overall Description Page -->
+      <div class="page p-3">
+        <h2 class="my-3">2. Overall Description</h2>
+        <div class="item">
+          <h4>2.1 Product Perspective</h4>
+          <p>
+            The product name is NSU-CLS. The project is a complaint lodging
+            system of North South University. This system manages all the
+            complaints lodged by faculty members, students, teaching
+            assistants, admin, and other university staff members. Faculty
+            members and admin can review the complaints. It also contains the
+            user's name, NSU-Id, email address, and additional information. This is a new self-contained product.
+          </p>
+        </div>
+        <div class="item">
+          <h4>2.2 Product Functions</h4>
+          <p>
+          <ul>
+            <li>Users need to register at first to complain.</li>
+            <li>
+              Users like students, faculty members, teaching assistants, and
+              admin members must register with their NSU email.
+            </li>
+            <li>
+              If the user is already registered, they need to login into the
+              system.
+            </li>
+            <li>
+              Users can lodge their complaints with proper evidence and choose
+              a reviewer for the complaint. Students, faculty members,
+              teaching assistants, admin members, and other staff members of
+              North South University can lodge complaints.
+            </li>
+            <li>Only faculty members and admin can review complaints.</li>
+            <li>
+              A lodger can edit or delete a complaint and change
+              the reviewer for the complaint.
+            </li>
+            <li>
+              The system also stores all the information about the user.
+            </li>
+          </ul>
+          </p>
+        </div>
+        <div class="item">
+          <h4>2.3 User Classes and Characteristics</h4>
+          <ul>
+            <li>Users like students, faculty members, teaching assistants, admin members, and other staff members can
+              lodge complaints
+              and edit or remove them.</li>
+            <li>
+              Only faculty members and admin can review a complaint.
+            </li>
+            <li>
+              Only the sysadmin or the lodger himself can remove a complaint.
+            </li>
+          </ul>
+
+        </div>
+        <div class="item">
+          <h4>2.4 Operating Environment</h4>
+          <ul>
+            <li>Platform: Web and Android</li>
+            <li>Web Server: Any operation system with NodeJS RTE 16 or newer installed.</li>
+            <li>
+              Client System: Any system with a modern web browser or for android with android version 7.0+
+            </li>
+            <li>
+              Database Configuration: MySQL
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          <h4>2.5 Design and Implementation Constraints</h4>
+          <p>The backend of NSU-CLS is developed using NodeJS (ExpressJS), and the frontend part is built on
+            ReactJS. The backend and frontend are connected through well-written APIs.
+            For mobile, the android application is developed using Java. People using devices with
+            Android versions lower than seven can not use the android version of this application.</p>
+        </div>
+        <div class="item">
+          <h4>2.6 User Documentation</h4>
+          <p>The product will provide users with basic running instructions. There is a part named ‘How to Complain’
+            where users will
+            get guidelines on how they can lodge a complaint.</p>
+        </div>
+        <div class="item">
+          <h4>2.7 Assumptions and Dependencies</h4>
+          <p>The user must have an active internet connection to utilize the system. For web users, there must be a
+            browser to access this product. Mobile users must have a minimum of Android version 7 installed. A user can
+            lodge a complaint then. The user can lodge the complaint through speech using the android app. After lodging
+            a complaint, the user, the reviewer and sysadmins will be notified via email.</p>
+        </div>
+      </div>
+      <!-- External Interface Requirements -->
+      <div class="page p-3">
+        <h2 class="my-3">3. External Interface Requirements</h2>
+        <div>
+          <h4>3.1 User Interfaces</h4>
+          <p>
+            The system will take the user to the home page first. Then the user needs to sign in to the system with the
+            correct credentials. If the user is not
+            registered, he will be redirected to the sign-up page, and he needs to
+            register to the system with all the correct information. A user can also sign up
+            and sign in through Google sign-up and Google sign-in.
+            Students, faculty members, admin members, teaching assistants have to sign up using NSU email.
+            After signing in successfully
+            a user can lodge complaints, and there is an option to choose a reviewer for the
+            complaints (which is mandatory). In the case of an android application, a user can lodge
+            Complaint through speech as there is a Bangla speech recognizer that converts
+            Speech to text.
+            A user can lodge complaints against multiple
+            people. An email will be sent to the lodger, reviewer, and sysadmin to notify them. The lodger should also
+            attach proper evidence.
+            Moreover, the lodger has the opportunity to edit, remove or change the reviewer.
+            The user's information will be stored, including their image(which will be taken from their NSU-ID's scan
+            copy) in the user's profile. There will be a Logout button to exit from the system.
+          </p>
+        </div>
+        <div class="item">
+          <h4>3.2 Hardware Interfaces</h4>
+          <p>The mobile app version of the software might need a microphone to convert
+            speech to text.</p>
+        </div>
+        <div class="item">
+          <h4>3.3 Software Interfaces</h4>
+          <p>‘NSU-CLS’ mainly relies on the following:</p>
+          <ul>
+            <li>
+              <span class="fw-bold">ExpressJS</span> - Express is a minimal and flexible Node.js web application
+              framework
+              that provides a robust set of features for web and mobile applications.It will be used to build the
+              backend of our application.
+            </li>
+            <li>
+              <span class="fw-bold">ReactJS</span> - React is a free and open-source front-end JavaScript library for
+              building
+              user interfaces based on UI components. It will be used to build the UI or frontend of the application.
+            </li>
+            <li>
+              <span class="fw-bold">MySQL</span> - This is the DBMS we will use to store our data.
+            </li>
+            <li>
+              <span class="fw-bold">Android</span> - Our mobile app will be built using Android.
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          <h4>3.4 Communications Interfaces</h4>
+          <p>The application’s user interface will send the data to the backend using rest API. The android app will
+            also use speech to text API to get data through speech. The whole communication will be done via HTTP. Our
+            authentication system will be used to log in or register.</p>
+        </div>
+      </div>
+      <!-- System Features -->
+      <div class="page p-3">
+        <div class="item">
+          <h2 class="my-3">
+            4. System Features
+          </h2>
+          <!-- Signup -->
+          <div class="item">
+            <h4>4.1.1 Sign up</h4>
+            <p>
+            <p class="fw-bold">Stimulus/ Response Sequences</p>
+            The following expanded use case shows the response sequences between the actor actions and the system
+            responses.
+            <ul class="mt-2">
+              <li><span class="fw-bold">Use Case:</span> Signup</li>
+              <li><span class="fw-bold">Preconditions:</span> The user must be someone from North South University</li>
+              <li><span class="fw-bold">Actor(s):</span> User, Reviewer</li>
+              <li><span class="fw-bold">Goal:</span> To create an account to the system.</li>
+            </ul>
+            <p><span class="fw-bold">Overview:</span> To use the system the user needs to sign up. The user can easily
+              sign up by filling the registration form</p>
+            <p><span class="fw-bold">Cross Reference:</span> Not applicable.</p>
+            <p class="fw-bold">Typical Course of Events:</p>
+            <table class="table table-stripped border border-2">
+              <tr>
+                <th>Actor's Action</th>
+                <th>System's Response</th>
+              </tr>
+              <tr>
+                <td>1. User visits the signup page</td>
+                <td>2. System responses with the sign up page</td>
+              </tr>
+              <tr>
+                <td>3. The user will create an account by filling out the registration form</td>
+                <td>4. System will verify the given information and save the details to the database. Then the system
+                  will
+                  send verification email to that email address</td>
+              </tr>
+              <tr>
+                <td>5. After verifying the verification email, the user successfully signed up and ready to use the
+                  system
+                </td>
+                <td></td>
+              </tr>
+            </table>
+            <p class="fw-bold">Alternate course of action:</p>
+            <p><span class="fw-bold">Step 5:</span> The credentials provided by the user may not be correct or already
+              in
+              the database, in that case
+              the system will show an error page. </p>
+            </p>
+          </div>
+        </div>
+        <!-- Signup (Using Google sing-in) -->
+        <div class="item">
+          <h4>4.1.2 Sign up (Using Google sign-in)</h4>
+          <p>
+          <p class="fw-bold">Stimulus/ Response Sequences</p>
+          The following expanded use case shows the response sequences between the actor actions and the system
+          responses.
+          <ul class="mt-2">
+            <li><span class="fw-bold">Use Case:</span> Signup</li>
+            <li><span class="fw-bold">Preconditions:</span> The user must have a google account</li>
+            <li><span class="fw-bold">Actor(s):</span> User, Reviewer</li>
+            <li><span class="fw-bold">Goal:</span> To create an account to the system.</li>
+          </ul>
+          <p><span class="fw-bold">Overview:</span> To use the system the user needs to sign up. By using Google
+            sign-in platform's API users can
+            easily sign up.</p>
+          <p><span class="fw-bold">Cross Reference:</span> Not applicable.</p>
+          <p class="fw-bold">Typical Course of Events:</p>
+          <table class="table table-stripped border border-2">
+            <tr>
+              <th>Actor's Action</th>
+              <th>System's Response</th>
+            </tr>
+            <tr>
+              <td>1. User visits the signup page</td>
+              <td>2. System responses with the sign up page</td>
+            </tr>
+            <tr>
+              <td>3. The user will create an account using Google's sign in API.</td>
+              <td>4. System will verify the given credentials through Google sign-in platform's API</td>
+            </tr>
+            <tr>
+              <td>5. User successfully signed up and ready to use the system</td>
+              <td></td>
+            </tr>
+          </table>
+          <p class="fw-bold">Alternate course of action:</p>
+          <p><span class="fw-bold">Step 5:</span> The credentials provided by the user may not be correct, in that case
+            the system will show an error page. </p>
+          <p class="fw-bold">Exception: </p>
+          <p> If Google is down, the user is unable to sign up. </p>
+          </p>
+        </div>
+        <!-- Login -->
+        <div class="item">
+          <h4>4.2.1 Login</h4>
+          <p>
+          <p class="fw-bold">Stimulus/ Response Sequences</p>
+          The following expanded use case shows the response sequences between the actor actions and the system
+          responses.
+          <ul class="mt-2">
+            <li><span class="fw-bold">Use Case:</span> Login</li>
+            <li><span class="fw-bold">Preconditions:</span> The user must register or sign up first to login to the
+              system.</li>
+            <li><span class="fw-bold">Actor(s):</span> User, Reviewer</li>
+            <li><span class="fw-bold">Goal:</span> Log into a user's account using correct credentials.</li>
+          </ul>
+          <p><span class="fw-bold">Overview:</span> For using the system, a user needs to login to the system first.
+            Once logged in, a user can lodge complaints against anyone he wants.
+          </p>
+          <p><span class="fw-bold">Cross Reference:</span> Not applicable.</p>
+          <p class="fw-bold">Typical Course of Events:</p>
+          <table class="table table-stripped border border-2">
+            <tr>
+              <th>Actor's Action</th>
+              <th>System's Response</th>
+            </tr>
+            <tr>
+              <td>1. User request for login page.</td>
+              <td>2. System will serve the login page to enter email address and password</td>
+            </tr>
+            <tr>
+              <td>3. User enters his credentials into the login page
+              </td>
+              <td>4. System will verify the credentials and redirect user to homepage</td>
+            </tr>
+            <tr>
+              <td>5. After successful login,a user can use the system.</td>
+              <td></td>
+            </tr>
+          </table>
+          <p class="fw-bold">Alternate course of action:</p>
+          <p><span class="fw-bold">Step 4:</span> The credentials provided by the user may not be correct, in that case
+            the system will show an error page. </p>
+          </p>
+        </div>
+        <!-- Login (Using Google sign-in) -->
+        <div class="item">
+          <h4>4.2.2 Login (Using Google sign-in)</h4>
+          <p>
+          <p class="fw-bold">Stimulus/ Response Sequences</p>
+          The following expanded use case shows the response sequences between the actor actions and the system
+          responses.
+          <ul class="mt-2">
+            <li><span class="fw-bold">Use Case:</span> Login</li>
+            <li><span class="fw-bold">Preconditions:</span> The user must register or sign up first to login to the
+              system.</li>
+            <li><span class="fw-bold">Actor(s):</span> User, Reviewer</li>
+            <li><span class="fw-bold">Goal:</span> Log into a user's account using correct credentials.</li>
+          </ul>
+          <p><span class="fw-bold">Overview:</span> For using the system, a user needs to login to the system first.
+            Once logged in, a user can lodge complaints against anyone he wants.
+          </p>
+          <p><span class="fw-bold">Cross Reference:</span> Not applicable.</p>
+          <p class="fw-bold">Typical Course of Events:</p>
+          <table class="table table-stripped border border-2">
+            <tr>
+              <th>Actor's Action</th>
+              <th>System's Response</th>
+            </tr>
+            <tr>
+              <td>1. User request for login page.</td>
+              <td>2. System will serve the login page with google account credentials.</td>
+            </tr>
+            <tr>
+              <td>3. User chooses google account to login to the system, then it provides the credentials
+                of the corresponding google account.
+              </td>
+              <td>4. System will verify the credentials which are given with the google login API.</td>
+            </tr>
+            <tr>
+              <td>5. After successful login,a user can use the system.</td>
+              <td></td>
+            </tr>
+          </table>
+          <p class="fw-bold">Alternate course of action:</p>
+          <p><span class="fw-bold">Step 4:</span> The credentials provided by the user may not be correct or the user
+            may be already registered with his email using registration form, in that case
+            the system will show an error page. </p>
+          <p class="fw-bold">Exception: </p>
+          <p> If Google is down, the user is unable to sign up. </p>
+          </p>
+        </div>
+        <!-- Lodge Complaint -->
+        <div class="item">
+          <h4>4.3 Lodge complaints</h4>
+          <p>
+          <p class="fw-bold">Stimulus/ Response Sequences</p>
+          The following expanded use case shows the response sequences between the actor actions and the system
+          responses.
+          <ul class="mt-2">
+            <li><span class="fw-bold">Use Case:</span> Lodge a complaint</li>
+            <li><span class="fw-bold">Preconditions:</span> The user must login to the system using correct credentials
+              in order to lodge a complaint.
+            </li>
+            <li><span class="fw-bold">Actor(s):</span> User</li>
+            <li><span class="fw-bold">Goal:</span> To lodge a complaint against someone with proper evidence.</li>
+          </ul>
+          <p><span class="fw-bold">Overview:</span> A user can edit or remove any complaint which was lodged by him.
+            Moreover, a lodger can choose a reviewer for the complaints.
+          </p>
+          <p><span class="fw-bold">Cross Reference:</span> Not applicable.</p>
+          <p class="fw-bold">Typical Course of Events:</p>
+          <table class="table table-stripped border border-2">
+            <tr>
+              <th>Actor's Action</th>
+              <th>System's Response</th>
+            </tr>
+            <tr>
+              <td>1. After successful login, user requests for the lodge a complaint page.</td>
+              <td>2. The system will generate the lodge complaint page</td>
+            </tr>
+            <tr>
+              <td>3. The user searches for the person against whom the complaint will be lodged.
+                Users can lodge complaints against multiple users.
+              </td>
+              <td>4. The system will find users based on the searched keyword.</td>
+            </tr>
+            <tr>
+              <td>5. User searches for the person whom he/she wants to choose as reviewer.</td>
+              <td>6. The system will find the reviewer's name based on the searched keyword.</td>
+            </tr>
+            <tr>
+              <td>7. User will lodge complaint and provide proper evidences.</td>
+              <td>8. Then the system will store the lodged complaint and the evidences in database. The system will also
+                notify SysAdmins, Reviewer and User via email</td>
+            </tr>
+          </table>
+          <p class="fw-bold">Alternate course of action:</p>
+          <p><span class="fw-bold">Step 2 ,3 ,4 and 5:</span> If the keyword does not match i.e valid names are not
+            found after searching ,then a complaint cannot be lodged.
+          </p>
+          <p><span class="fw-bold">Step 7 and 8:</span>The message and evidence part
+            cannot be kept blank.
+          </p>
+          </p>
+        </div>
+        <!-- Edit Complaint -->
+        <div class="item">
+          <h4>4.4 Edit complaints</h4>
+          <p>
+          <p class="fw-bold">Stimulus/ Response Sequences</p>
+          The following expanded use case shows the response sequences between the actor actions and the system
+          responses.
+          <ul class="mt-2">
+            <li><span class="fw-bold">Use Case:</span> Edit a complaint</li>
+            <li><span class="fw-bold">Preconditions:</span> The user must login to the system using correct credentials
+              in order to edit a complaint. Also the user must have lodged a complaint before.
+            </li>
+            <li><span class="fw-bold">Actor(s):</span> User</li>
+            <li><span class="fw-bold">Goal:</span> To edit a complaint that has been lodged earlier</li>
+          </ul>
+          <p><span class="fw-bold">Overview:</span> A user can edit or remove any complaint which was lodged by him.
+            Moreover, a lodger can choose a reviewer for the complaints.
+          </p>
+          <p><span class="fw-bold">Cross Reference:</span> Not applicable.</p>
+          <p class="fw-bold">Typical Course of Events:</p>
+          <table class="table table-stripped border border-2">
+            <tr>
+              <th>Actor's Action</th>
+              <th>System's Response</th>
+            </tr>
+            <tr>
+              <td>1. After successful login, user requests for the list of complaints he/she lodged</td>
+              <td>2. The system will serve the list of complaints made by the user</td>
+            </tr>
+            <tr>
+              <td>3. The user then selects a specific complaint and clicks on edit button
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>4. The user makes necessary changes and clicks on Save Changes button</td>
+              <td>5. The system will store the updated data and notify associated persons to that complaint through
+                email</td>
+            </tr>
+          </table>
+          <p class="fw-bold">Alternate course of action:</p>
+          <p><span class="fw-bold">Step 3: </span> The list of complaints might be zero. So this will show the user an
+            error page.
+          </p>
+          </p>
+        </div>
+        <!-- Review Complaint -->
+        <div class="item">
+          <h4>4.5 Review complaints</h4>
+          <p>
+          <p class="fw-bold">Stimulus/ Response Sequences</p>
+          The following expanded use case shows the response sequences between the actor actions and the system
+          responses.
+          <ul class="mt-2">
+            <li><span class="fw-bold">Use Case:</span> Review a complaint</li>
+            <li><span class="fw-bold">Preconditions:</span> Reviewer must be a faculty member or admin member.
+            </li>
+            <li><span class="fw-bold">Actor(s):</span> Reviewer</li>
+            <li><span class="fw-bold">Goal:</span> Review a lodged complaint</li>
+          </ul>
+          <p><span class="fw-bold">Overview:</span> A reviewer can review complaints in which he/she was chosen as
+            reviewer.A reviewer can also change the reviewer.
+          </p>
+          <p><span class="fw-bold">Cross Reference:</span> Not applicable.</p>
+          <p class="fw-bold">Typical Course of Events:</p>
+          <table class="table table-stripped border border-2">
+            <tr>
+              <th>Actor's Action</th>
+              <th>System's Response</th>
+            </tr>
+            <tr>
+              <td>1. After successful login,a reviewer requests for the list of complaints to review</td>
+              <td>2. The system will serve a list of complaints that the reviewer is chosen to judge</td>
+            </tr>
+            <tr>
+              <td>3. The reviewer will click on the complaint that he/she will review.
+              </td>
+              <td>4. The system will show the details of the complaint that has been clicked by the reviewer.</td>
+            </tr>
+            <tr>
+              <td>5. After choosing a specific complaint,reviewer can resolve a complaint or
+                change the reviewer of the complaint.
+              </td>
+              <td>6. The system will save the update in database and will notify everyone associated with this complaint
+                through
+                email.</td>
+            </tr>
+          </table>
+          <p class="fw-bold">Alternate course of action:</p>
+          <p><span class="fw-bold">Step 4: </span>The list of complaints might be empty. In that case, there will be no
+            complaints
+            for reviewing.
+          </p>
+          </p>
+        </div>
+        <!-- Log out -->
+        <div class="item">
+          <h4>4.6 Logout</h4>
+          <p>
+          <p class="fw-bold">Stimulus/ Response Sequences</p>
+          The following expanded use case shows the response sequences between the actor actions and the system
+          responses.
+          <ul class="mt-2">
+            <li><span class="fw-bold">Use Case:</span> Logout</li>
+            <li><span class="fw-bold">Preconditions:</span> The user/reviewer must be logged in before.
+            </li>
+            <li><span class="fw-bold">Actor(s):</span> User, Reviewer</li>
+            <li><span class="fw-bold">Goal:</span> To exit from the system</li>
+          </ul>
+          <p><span class="fw-bold">Overview:</span> To exit from the system the user needs to log out.
+            The user will easily exit from the system by clicking the Logout button.
+          </p>
+          <p><span class="fw-bold">Cross Reference:</span> Not applicable.</p>
+          <p class="fw-bold">Typical Course of Events:</p>
+          <table class="table table-stripped border border-2">
+            <tr>
+              <th>Actor's Action</th>
+              <th>System's Response</th>
+            </tr>
+            <tr>
+              <td>1. The user requests to exit from the system by clicking the log out button.</td>
+              <td>2. The system clears the user's session from it's database.</td>
+            </tr>
+          </table>
+          </p>
+        </div>
+      </div>
+      <!-- Other Nonfunctional Requirements -->
+      <div class="page p-3">
+        <h2 class="my-3">
+          5. Other Nonfunctional Requirements
+        </h2>
+        <div class="item">
+          <h4>5.1 Performance Requirements</h4>
+          <p>The system must be capable of running the application fluently. There should be no visible latency between
+            the user's action and the system's response. In case of mobile app, it needs to be lightweight and
+            responsive</p>
+        </div>
+        <div class="item">
+          <h4>5.2 Safety Requirements</h4>
+          <p>
+            To ensure that no one of NSU-CLS’s users loses any data while using NSU-CLS
+            (due to a crash or a bug of some kind) the developer team updates
+            NSU-CLS regularly.
+          </p>
+        </div>
+        <div class="item">
+          <h4>5.3 Security Requirements</h4>
+          <p>
+            The system shall not disclose any personal information about the users. The Application shall not
+            grant access to an unauthorized user or any user outside North South University.
+          </p>
+        </div>
+        <div class="item">
+          <h4>5.4 Software Quality Attributes</h4>
+          <ul>
+            <li>
+              <span class="fw-bold">AVAILABILITY:</span> Since it will be an online system it needs to be regularly
+              available to the user.
+            </li>
+            <li><span class="fw-bold">USABILITY:</span> NSU-CLS provides the users with both simple and advanced
+              features.
+              The user
+              should have no trouble navigating and using the system.</li>
+            <li><span class="fw-bold">RELIABILITY:</span> The user can rely on the NSU-CLS as the user can lodge
+              complaints
+              without letting the person knowing against whom complaint has been lodged.
+            </li>
+          </ul>
+        </div>
+        <div class="item">
+          <h4>5.5 Business Rules</h4>
+          <p>
+            The website will be free for all. Every user will get all features for free.
+          </p>
+        </div>
+      </div>
+      <!-- Appendix -->
+      <div class="page p-3">
+        <h2 class="my-3">
+          Appendix A: Glossary
+        </h2>
+        <div class="item">
+          <p>Definitions, acronyms, and abbreviations are listed below:</p>
+          <ul>
+            <li><span class="fw-bold">API:</span> Application Protocol Interface. This is the part of a program that
+              lets
+              other programs or services interact with the data in the former and vice versa.
+            </li>
+            <li>
+              <span class="fw-bold">Framework:</span> It is like the base of a program that provides generic
+              functionality
+              but can be custom built for specific purposes.
+
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
